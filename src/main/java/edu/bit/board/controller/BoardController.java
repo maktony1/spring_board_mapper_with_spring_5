@@ -27,6 +27,12 @@ public class BoardController {
 //		this.service = service;
 //	}
 	
+	@GetMapping("/jqueryList")
+	public void jqueryList(Model model) {
+		log.info("jqueryList");
+		model.addAttribute("list", service.getList());
+	}
+	
 	@GetMapping("/list")
 	public void list(Model model) {
 		log.info("list");
