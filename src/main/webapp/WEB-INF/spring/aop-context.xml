@@ -13,11 +13,21 @@
 	<!-- AOP 설정 -->
 	<aop:config>
 		<aop:aspect ref="logAdvice">
-			<aop:pointcut id="publicM" expression="within(edu.bit.board.*)"/>
-			<aop:before pointcut-ref="publicM" method="printLogging" />
+			<aop:pointcut id="publicM" expression="within(edu.bit.board..*)"/> <!-- edu.bit.board..* <= 이 패키지 밑 모든 함수에 적용한다 -->
+			<aop:before pointcut-ref="publicM" method="printLogging" /> <!-- 모든 함수의 시작부분에 적용 시키겠다 = before -->
 		</aop:aspect>	
 	</aop:config>
-	<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+	
+	<aop:config>
+		<aop:aspect ref="logAop">
+			<!-- pointcut(핵심 기능) 의 id는 publicM 이고, edu.bit.board 패키지에 및 하위 에 있는 모든 클래스의 함수에 공통기능을 적용 -->
+			<aop:pointcut id="publicM" expression="within(edu.bit.board..*)"/> <!-- edu.bit.board..* <= 이 패키지 밑 모든 함수에 적용한다 -->
+			<aop:around pointcut-ref="publicM" method="loggerAop" /> <!-- 모든 함수의 시작부분에 적용 시키겠다 = before -->
+		</aop:aspect>	
+	</aop:config>
+	
+	
+	<aop:aspectj-autoproxy></aop:aspectj-autoproxy> <!-- AOP를 어노테이션으로 설정하려고 엘리멘트 선언!!!  -->
 	<context:component-scan base-package="edu.bit.board.aop"></context:component-scan>
 </beans>
 

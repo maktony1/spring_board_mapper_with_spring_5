@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 @Aspect
 public class LogAdvice {
 	
+	
 	@Before("within(edu.bit.board.service.*)")
 	public void printLogging() {  
 		System.out.println("공통기능 - 프린트 로그");
