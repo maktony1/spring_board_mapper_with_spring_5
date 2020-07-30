@@ -1,8 +1,11 @@
 package edu.bit.board.aop;
 
 import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
+import org.springframework.stereotype.Component;
 
+@Component
 @Aspect
 public class LogAOP {
 
@@ -18,6 +21,7 @@ public class LogAOP {
 //  @Pointcut("bean(student)")   //student 빈에만 적용
 //  @Pointcut("bean(*ker)")      //~ker로 끝나는 빈에만 적용
 	
+	@Around("within(edu.bit.board..*)")
 	public Object loggerAop(ProceedingJoinPoint joinpoint) throws Throwable {
 		String signatureStr = joinpoint.getSignature().toShortString();
 		System.out.println( signatureStr + " is start.");
