@@ -102,6 +102,21 @@ public class BoardController {
 		log.info("ajaxList()");
 		return "ajaxList";
 	}
+	@GetMapping("/ajax/List2")
+	public String ajaxList2() {
+		log.info("ajaxList2()");
+		return "ajaxList2";
+	}
+	@GetMapping("/ajax/List3")
+	public String ajaxList3() {
+		log.info("ajaxList3()");
+		return "ajaxList3";
+	}
+	@GetMapping("/ajax/List4")
+	public String ajaxList4() {
+		log.info("ajaxList4()");
+		return "ajaxList4";
+	}
 	
 }
 	//	@Autowired

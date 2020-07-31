@@ -20,8 +20,8 @@
 		}); */
 
 		function getList() {
-			var url = "${pageContext.request.contextPath}/rest/after.json";
-			url = "http://192.168.6.10:8282/board/rest/after.json";
+			var url = "${pageContext.request.contextPath}/restful/after.json";
+			/* url = "http://192.168.6.10:8282/board/rest/after.json"; */
 			$.ajax({
 	            type: 'GET',
 	            url: url,
