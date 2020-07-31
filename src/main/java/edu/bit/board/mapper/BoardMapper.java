@@ -20,4 +20,5 @@ public interface BoardMapper {
 	void updateShape(@Param("BoardVO")BoardVO boardVO);
 	void insertReply(BoardVO boardVO);
 	void modify(@Param("boardVO")BoardVO boardVO);
+	void upHit(BoardVO boardVO);
 }

@@ -28,6 +28,8 @@ public class BoardServiceImpl implements BoardService {
 	@Override
 	public BoardVO get(int bno) {
 		log.info("get......");
+//		mapper.upHit(bno);
+//		log.info("upHit......");
 		return mapper.read(bno);
 	}
 
