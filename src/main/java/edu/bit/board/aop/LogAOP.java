@@ -29,7 +29,6 @@ public class LogAOP {
 		long st = System.currentTimeMillis();
 		try {
 			Object obj = joinpoint.proceed();
-			
 			return obj;
 		}finally {
 			
@@ -39,13 +38,6 @@ public class LogAOP {
 			System.out.println( signatureStr + " 경과시간 : " + (et - st));
 		} 
 	}
-	
-	
-	
-	
-	
-	
-	
 	
 	
 }

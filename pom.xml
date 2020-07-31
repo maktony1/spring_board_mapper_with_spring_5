@@ -202,6 +202,7 @@
 			<version>2.9.6</version>
 		</dependency>
 
+		<!-- 자바 객체를 XML로 -->
 		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.dataformat/jackson-dataformat-xml -->
 		<dependency>
 			<groupId>com.fasterxml.jackson.dataformat</groupId>
@@ -209,6 +210,7 @@
 			<version>2.9.6</version>
 		</dependency>
 
+		<!-- 자바 객체를 json으로 -->
 		<!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
 		<dependency>
 			<groupId>com.google.code.gson</groupId>

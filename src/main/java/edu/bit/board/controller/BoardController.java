@@ -96,7 +96,12 @@ public class BoardController {
 		return "redirect:list";
 	}
 	
-	
+	//ajax 부분
+	@GetMapping("/ajax/List")
+	public String ajaxList() {
+		log.info("ajaxList()");
+		return "ajaxList";
+	}
 	
 }
 	//	@Autowired
