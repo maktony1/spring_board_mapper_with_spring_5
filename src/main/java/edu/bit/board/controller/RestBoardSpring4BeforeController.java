@@ -22,11 +22,10 @@ public class RestBoardSpring4BeforeController {
 	private BoardService boardService;
 
 	@ResponseBody //메서드의 리턴타입을 기존과 다르게 처리하는것을 명시
-	@RequestMapping("/restful/after")
-	
+	@RequestMapping("/restful/before")
 	public List<BoardVO> before(){
 		//자바 객체를 XML 바꿔주는 뭔가(객체)가 있다.
-		log.info("/restful/after");
+		log.info("/restful/before");
 		List<BoardVO> list = boardService.getList();
 		
 		return list;

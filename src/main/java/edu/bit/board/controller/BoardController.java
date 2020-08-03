@@ -1,7 +1,5 @@
 package edu.bit.board.controller;
 
-import javax.inject.Inject;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,6 +25,17 @@ public class BoardController {
 //		this.service = service;
 //	}
 	
+	@RequestMapping("/rectangleArea")
+	public void recArea(String width,String height) {
+		System.out.println(width);
+		System.out.println(height);
+		log.info("rectArea");
+	}
+	@GetMapping("/rectangle")
+	public String rectangle() {
+		log.info("rectangle");
+		return "rectangle";
+	}
 	@GetMapping("/jqueryList")
 	public void jqueryList(Model model) {
 		log.info("jqueryList");

@@ -8,7 +8,7 @@ public interface BoardService {
 	
 	List<BoardVO> getList();
 	BoardVO get(int bno);
-	void remove(int bno);
+	int remove(int bno);
 	void insertBoard(BoardVO boardVO);
 	void writeBoard(BoardVO boardVO);
 	void writeReply(BoardVO boardVO);

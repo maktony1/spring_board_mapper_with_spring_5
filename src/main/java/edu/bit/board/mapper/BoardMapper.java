@@ -13,7 +13,7 @@ public interface BoardMapper {
 	BoardVO read(int bno);
 	
 	@Delete("Delete from mvc_board where bid = #{bno}")
-	void delete(int bno);
+	int delete(int bno);
 	
 	void insertBoard(BoardVO boardVO);
 	
