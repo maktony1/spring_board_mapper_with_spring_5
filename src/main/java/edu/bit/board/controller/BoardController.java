@@ -1,5 +1,8 @@
 package edu.bit.board.controller;
 
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.request;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.request;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,9 +29,8 @@ public class BoardController {
 //	}
 	
 	@RequestMapping("/rectangleArea")
-	public void recArea(String width,String height) {
-		System.out.println(width);
-		System.out.println(height);
+	public void recArea(Model model) {
+		System.out.println("model :" +model);
 		log.info("rectArea");
 	}
 	@GetMapping("/rectangle")
