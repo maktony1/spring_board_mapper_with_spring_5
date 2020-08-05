@@ -50,6 +50,19 @@ public class LoginController {
 		return "redirect:/";
 		
 	}
+	@RequestMapping(value = "/logout")
+	public String logout(HttpSession session) throws Exception{
+		
+		log.info("/member/logout");
+		
+		session.invalidate(); //GC(가비지컬렉터가 지움)
+							  //delete 안쓰고 invalidate 쓰는이유 
+							  //delete 로 못지움 자기가 못지우기 때문에
+							  //invalidate로 지울 대상을 GC에게 알려준다고 생각 ㄱ
+		return "redirect:/";
+	}
+	
+	
 }
 /*
 create table users(

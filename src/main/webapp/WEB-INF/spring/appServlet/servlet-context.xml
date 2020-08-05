@@ -29,6 +29,20 @@
 	<context:component-scan base-package="edu.bit.board" />
 	<context:component-scan base-package="edu" />
 	
+	<!-- 인터셉터 객체 생성 -->
+	<beans:bean id="boardInterceptor" class="edu.bit.board.interceptor.BoardInterceptor">
+	</beans:bean>
+	
+	<!-- Interceptor 설정 -->
+	<interceptors>
+	    <interceptor>
+	        <mapping path="/list"/>         
+	        <exclude-mapping path="/resources/**"/>
+	        <beans:ref bean="boardInterceptor"/>
+	    </interceptor>
+	</interceptors>
+	
+	
 	<aop:config>
 		<aop:aspect ref="logAdvice">
 			<aop:pointcut id="publicM" expression="within(edu.bit.board..*)"/> <!-- edu.bit.board..* <= 이 패키지 밑 모든 함수에 적용한다 -->

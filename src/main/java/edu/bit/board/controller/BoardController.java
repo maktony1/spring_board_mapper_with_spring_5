@@ -44,11 +44,15 @@ public class BoardController {
 		model.addAttribute("list", service.getList());
 	}
 	
-	@GetMapping("/list")
-	public void list(Model model) {
-		log.info("list");
-		model.addAttribute("list", service.getList());
-	}
+		 
+		@GetMapping("/list")
+		public void list(Model model) {
+			log.info("list");
+			model.addAttribute("list", service.getList());
+		}
+		 
+
+
 	
 	@GetMapping("/content_view")
 	public String content_view(BoardVO boardVO, Model model) {
