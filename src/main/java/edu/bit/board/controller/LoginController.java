@@ -64,6 +64,9 @@ public class LoginController {
 	
 	
 }
+/**
+ * 데이터 베이스에 추가하기~~~~~~~ 
+ */
 /*
 create table users(
 		username varchar2(50) not null primary key,
