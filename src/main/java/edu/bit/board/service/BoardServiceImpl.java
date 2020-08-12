@@ -5,6 +5,7 @@ import java.util.List;
 import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import edu.bit.board.mapper.BoardMapper;
 import edu.bit.board.vo.BoardVO;
@@ -57,6 +58,7 @@ public class BoardServiceImpl implements BoardService {
 		
 	}
 
+	@Transactional
 	@Override
 	public void writeReply(BoardVO boardVO) {
 		mapper.updateShape(boardVO);
