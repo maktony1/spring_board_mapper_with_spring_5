@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.bit.board.mapper.EmpMapper">
+	
+	<select id="getList" resultType="edu.bit.board.vo.EmpVO">
+	<![CDATA[
+		select * from emp
+	]]>
+	</select>
+	
+	<resultMap id="Emp" type="edu.bit.board.vo.EmpVO" >
+		<id property="empno" column="empno"/> <!-- 컬럼은 실제 컬럼명 프로퍼티는 변수명 -->
+		<result property="ename" column="ename"/>
+		<result property="job" column="job"/>
+		<result property="sal" column="sal"/>
+	</resultMap>
+
+	<resultMap id="DeptEmpResult" type="edu.bit.board.vo.DeptEmpVO" >
+		
+		<id property="deptno" column="deptno"/> <!-- 컬럼은 실제 컬럼명 프로퍼티는 변수명 -->
+		<result property="dname" column="dname"/>
+		<result property="loc" column="loc"/>
+		<collection property="empList" javaType="java.util.ArrayList" resultMap="Emp" />
+		<!--	
+			1:N은 collecton
+			1:1은 association 
+		-->
+	</resultMap>
+	
+	<select id="selectDeptEmp" parameterType="int" resultMap="DeptEmpResult">
+	<![CDATA[
+		select * from emp e,dept d where e.deptno = d.deptno and d.deptno = #{deptno}
+	]]>
+	</select>
+	
+</mapper>

@@ -39,6 +39,6 @@
 		base-package="edu.bit.board.mapper" />
 
  	<context:component-scan
-		base-package="edu.bit.board.service"></context:component-scan>
+		base-package="edu.bit.board.service" />
 </beans>
 

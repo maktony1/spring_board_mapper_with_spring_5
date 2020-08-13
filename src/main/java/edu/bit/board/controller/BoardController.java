@@ -1,7 +1,6 @@
 package edu.bit.board.controller;
 
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.request;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.request;
+import javax.inject.Inject;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,8 +18,8 @@ import lombok.extern.log4j.Log4j;
 @AllArgsConstructor
 public class BoardController {
 //@Autowired 
-//	@Inject
-	
+
+	@Inject
 	private BoardService service;
 	
 //	@Inject

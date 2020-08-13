@@ -13,7 +13,7 @@ import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j;
 
 @Log4j
-@Service("service")
+@Service
 @AllArgsConstructor
 public class BoardServiceImpl implements BoardService {
 	
