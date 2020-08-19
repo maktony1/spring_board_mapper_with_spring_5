@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import edu.bit.board.mapper.BoardMapper;
+import edu.bit.board.page.Criteria;
 import edu.bit.board.vo.BoardVO;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j;
@@ -68,6 +69,18 @@ public class BoardServiceImpl implements BoardService {
 	@Override
 	public void modify(BoardVO boardVO) {
 		mapper.modify(boardVO);
+	}
+
+	@Override
+	public int getTotal(Criteria cri) {
+		log.info("get total count");
+		return mapper.getTotalCount(cri);
+	}
+
+	@Override
+	public List<BoardVO> getList(Criteria criteria) {
+		log.info("get List with criteria"  + criteria);
+		return mapper.getListWithPaging(criteria);
 	}
 
 	

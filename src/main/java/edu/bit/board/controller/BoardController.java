@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import edu.bit.board.page.Criteria;
+import edu.bit.board.page.PageDTO;
 import edu.bit.board.service.BoardService;
 import edu.bit.board.vo.BoardVO;
 import lombok.AllArgsConstructor;
@@ -26,6 +28,24 @@ public class BoardController {
 //	public BoardController(BoardService service) {
 //		this.service = service;
 //	}
+	 @GetMapping("/list3")
+	 public void list3(Criteria cri, Model model) {	
+		 log.info("list3");
+		 log.info(cri);
+		 model.addAttribute("list", service.getList(cri));	
+		 
+		 int total = service.getTotal(cri);
+		 log.info("total" + total);
+		 
+		 model.addAttribute("pageMaker", new PageDTO(cri,total));	
+	 }
+	
+	
+	
+	
+	
+	
+	
 	
 	@RequestMapping("/rectangleArea")
 	public void recArea(Model model) {

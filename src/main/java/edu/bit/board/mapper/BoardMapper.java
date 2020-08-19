@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Param;
 
+import edu.bit.board.page.Criteria;
 import edu.bit.board.vo.BoardVO;
 
 public interface BoardMapper {
@@ -21,4 +22,8 @@ public interface BoardMapper {
 	void insertReply(BoardVO boardVO);
 	void modify(@Param("boardVO")BoardVO boardVO);
 	void upHit(BoardVO boardVO);
+	
+	
+	public List<BoardVO> getListWithPaging(Criteria cri);
+	public int getTotalCount(Criteria cri);
 }
